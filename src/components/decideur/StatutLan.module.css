@@ -1,0 +1,241 @@
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  margin: 0 var(--space-md) var(--space-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  animation: fadeIn 0.3s ease both;
+}
+
+/* ── En-tête ── */
+.moduleHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--space-md);
+  border-bottom: 1px solid var(--border);
+}
+
+.moduleLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.moduleIcon { font-size: 20px; }
+
+.moduleTitle {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+.moduleSub {
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.statusBadge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+}
+
+.ok   { background: var(--status-ok-bg);   color: var(--status-ok-text);   border: 1px solid rgba(13,155,90,0.3); }
+.warn { background: var(--status-warn-bg);  color: var(--status-warn-text); border: 1px solid rgba(201,124,10,0.3); }
+.ko   { background: var(--status-ko-bg);    color: var(--status-ko-text);   border: 1px solid rgba(217,53,53,0.3); }
+
+/* ── Compteurs ── */
+.counters {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 1px solid var(--border);
+}
+
+.counterBox {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px var(--space-sm);
+  gap: 2px;
+}
+
+.counterDivider {
+  width: 1px;
+  background: var(--border);
+  margin: 10px 0;
+}
+
+.counterVal {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.counterWarn { color: var(--status-warn); }
+.counterKo   { color: var(--status-ko); }
+
+.counterLabel {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── Niveaux ── */
+.niveauxSection {
+  padding: 12px var(--space-md) 0;
+}
+
+.niveauxTitle {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.niveauxList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 12px;
+}
+
+.niveauRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.niveauOk   { background: #f0fdf4; border-color: rgba(13,155,90,0.15); }
+.niveauWarn { background: #fffbeb; border-color: rgba(201,124,10,0.2); }
+.niveauKo   { background: #fef2f2; border-color: rgba(217,53,53,0.2); }
+
+.niveauDot {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.dotOk   { background: var(--status-ok);   color: #fff; }
+.dotWarn { background: var(--status-warn);  color: #fff; }
+.dotKo   { background: var(--status-ko);    color: #fff; animation: pulse 2s ease-in-out infinite; }
+
+.niveauContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.niveauCode {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.niveauDetail {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ── Synthèse OK ── */
+.synthOk {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: var(--space-md);
+  background: var(--status-ok-bg);
+  border-top: 1px solid rgba(13,155,90,0.15);
+}
+
+.synthCheckIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--status-ok);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.synthTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--status-ok-text);
+}
+
+.synthDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 3px;
+  line-height: 1.5;
+}
+
+/* ── Synthèse Action DSI ── */
+.synthAction {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: var(--space-md);
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+
+.synthActionWarn { background: var(--status-warn-bg); border-top-color: rgba(201,124,10,0.2); }
+.synthActionKo   { background: var(--status-ko-bg);   border-top-color: rgba(217,53,53,0.2); }
+
+.synthWarnIcon {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.synthActionTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.synthActionDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  line-height: 1.5;
+}
+
+/* ── No data ── */
+.noData {
+  padding: var(--space-lg);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+}
+.noDataSub { font-size: 12px; margin-top: 4px; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}

@@ -1,0 +1,178 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--bg-page);
+  max-width: var(--max-width-decideur);
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── En-tête ── */
+.header {
+  background: var(--bg-header);
+  color: var(--text-inverse);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+}
+
+.headerTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px var(--space-md) 8px;
+  gap: var(--space-sm);
+}
+
+/* Bandeau drapeau */
+.flagBand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  display: flex;
+}
+.flagRed   { flex: 1; background: var(--bf-red); }
+.flagGreen { flex: 1; background: var(--bf-green); }
+
+/* Logo + marque */
+.brandRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  margin-top: 3px;
+}
+
+.logoMark {
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.brandSub {
+  font-size: 10px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1;
+}
+
+/* ── Navigation ── */
+.nav {
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+.navLink {
+  flex: 1;
+  text-align: center;
+  padding: 10px 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.65);
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  position: relative;
+}
+
+.navLink:hover { color: #ffffff; }
+
+.navLink.active {
+  color: #ffffff;
+  border-bottom-color: var(--bf-yellow);
+}
+
+.badge {
+  background: var(--status-ko);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 18px;
+  height: 18px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ── Site bar ── */
+.siteBar {
+  background: rgba(0,0,0,0.25);
+  padding: 8px var(--space-md);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.siteLabel {
+  display: block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2px;
+}
+
+/* ── Contenu principal ── */
+.main {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* ── Pied de page ── */
+.footer {
+  background: var(--bg-footer);
+  padding: var(--space-sm) var(--space-md);
+}
+
+.footerContent {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  justify-content: center;
+}
+
+.footerDot { opacity: 0.4; }
+
+/* ── Tablette et desktop ── */
+@media (min-width: 768px) {
+  .shell {
+    max-width: 100%;
+    box-shadow: none;
+  }
+  .main {
+    max-width: var(--max-width-decideur);
+    margin: 0 auto;
+    width: 100%;
+  }
+  .header {
+    max-width: 100%;
+  }
+  .headerTop {
+    max-width: var(--max-width-decideur);
+    margin: 0 auto;
+  }
+  .nav {
+    max-width: var(--max-width-decideur);
+    margin: 0 auto;
+  }
+  .siteBar {
+    padding-left: calc((100% - var(--max-width-decideur)) / 2 + var(--space-md));
+    padding-right: calc((100% - var(--max-width-decideur)) / 2 + var(--space-md));
+  }
+}

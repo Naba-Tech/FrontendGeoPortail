@@ -1,0 +1,161 @@
+.page {
+  padding-bottom: var(--space-xl);
+  animation: fadeIn 0.3s ease both;
+}
+
+/* Légende */
+.legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: 10px var(--space-md);
+  flex-wrap: wrap;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dotOk   { background: var(--status-ok); }
+.dotWarn { background: var(--status-warn); }
+.dotKo   { background: var(--status-ko); }
+
+/* Carte */
+.mapContainer {
+  margin: 0 var(--space-md);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  height: 280px;
+  background: #e8f0f7;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+}
+
+.mapLoader {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #e8f0f7;
+  font-size: 13px;
+  color: var(--text-secondary);
+  z-index: 10;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--border);
+  border-top-color: var(--anptic-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.mapHint {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 6px var(--space-md);
+  font-style: italic;
+}
+
+/* Liste des sites */
+.sitesList {
+  margin: var(--space-sm) var(--space-md) 0;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.sitesTitle {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  padding: 12px var(--space-md) 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.siteRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px var(--space-md);
+  border-bottom: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background var(--transition);
+  min-height: 56px;
+  font-family: var(--font-sans);
+}
+
+.siteRow:last-child { border-bottom: none; }
+
+.siteRow:hover      { background: var(--bg-hover); }
+.siteRowActive      { background: #eff6ff; }
+
+.siteRowLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.siteDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.siteName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.siteVille {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 1px;
+}
+
+.siteStatut {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.disponible  { background: var(--status-ok-bg);   color: var(--status-ok-text); }
+.degrade     { background: var(--status-warn-bg);  color: var(--status-warn-text); }
+.horsService { background: var(--status-ko-bg);    color: var(--status-ko-text); }
+
+@keyframes spin   { to { transform: rotate(360deg); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 768px) {
+  .mapContainer { height: 400px; }
+}

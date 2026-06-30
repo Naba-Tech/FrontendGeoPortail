@@ -1,0 +1,230 @@
+.page {
+  padding-bottom: var(--space-xl);
+  animation: fadeIn 0.3s ease both;
+}
+
+/* Push Banner */
+.pushBanner {
+  margin: var(--space-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: flex;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pushBannerIcon { font-size: 24px; flex-shrink: 0; }
+
+.pushBannerContent { flex: 1; }
+
+.pushBannerTitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.pushBannerDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.pushBannerActions {
+  display: flex;
+  gap: 8px;
+}
+
+.btnActiver {
+  background: var(--anptic-blue);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  min-height: 36px;
+  transition: background var(--transition);
+}
+.btnActiver:hover { background: var(--anptic-blue-light); }
+
+.btnPlusTard {
+  background: none;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  min-height: 36px;
+  transition: background var(--transition);
+}
+.btnPlusTard:hover { background: var(--bg-hover); }
+
+/* Header alertes */
+.alertesHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px var(--space-md) 8px;
+}
+
+.alertesTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nonLuBadge {
+  background: var(--status-ko);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  min-width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+.btnMarquerLu {
+  font-size: 12px;
+  color: var(--text-link);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  padding: 4px;
+}
+.btnMarquerLu:hover { text-decoration: underline; }
+
+/* Liste des alertes */
+.alertesList {
+  margin: 0 var(--space-md);
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.alerteRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  width: 100%;
+  padding: 14px var(--space-md);
+  border-bottom: 1px solid var(--border);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+  transition: background var(--transition);
+  font-family: var(--font-sans);
+  min-height: 44px;
+}
+
+.alerteRow:last-child { border-bottom: none; }
+.alerteRow:hover      { background: var(--bg-hover); }
+.alerteNonLu          { background: #f8faff; }
+
+.unreadDot {
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--anptic-blue);
+  flex-shrink: 0;
+}
+
+.alerteColorDot {
+  font-size: 12px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.alerteContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.alerteSiteNom {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.alerteMessage {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.alerteTime {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* États vides / chargement */
+.loadingState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: var(--space-2xl) var(--space-md);
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--border);
+  border-top-color: var(--anptic-blue);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: var(--space-2xl) var(--space-md);
+  text-align: center;
+}
+
+.emptyIcon {
+  font-size: 40px;
+  color: var(--status-ok);
+}
+
+.emptyTitle {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.emptyDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes spin { to { transform: rotate(360deg); } }

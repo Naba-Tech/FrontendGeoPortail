@@ -1,0 +1,23 @@
+.page {
+  padding-bottom: var(--space-xl);
+  animation: fadeIn 0.3s ease both;
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: var(--space-md) var(--space-md) 0;
+  padding: 12px var(--space-md);
+  background: var(--status-ko-bg);
+  border: 1px solid rgba(217,53,53,0.25);
+  border-radius: var(--radius-md);
+  color: var(--status-ko-text);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
